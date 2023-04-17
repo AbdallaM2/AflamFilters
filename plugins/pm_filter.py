@@ -90,7 +90,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                   text=f"🔖{get_size(file.file_size)}🔮{file.file_name}", callback_data=f'{pre}#{file.file_id}'
+                   text=f"[{get_size(file.file_size)}]🍿{file.file_name}", callback_data=f'{pre}#{file.file_id}'
                 ),
             ]
             for file in files
@@ -111,19 +111,21 @@ async def next_page(bot, query):
     try:
         if settings['auto_delete']:
             btn.insert(0, 
-            [
-                InlineKeyboardButton(f'😇 Info', 'tips'),
-                InlineKeyboardButton(f'📝 𝖳𝗂𝗉𝗌', 'info')
-            ]
-            )
+        [
+                InlineKeyboardButton(f'sᴇʀɪᴇs', 'ᴍᴏᴠɪᴇs'),
+                InlineKeyboardButton(f'ᴍᴏᴠɪᴇs', 'sᴇʀɪᴇs'),
+                InlineKeyboardButton(f'ɪɴꜰᴏ', 'ɪɴꜰᴏ')
+        ]
+    )
 
         else:
             btn.insert(0, 
-            [
-                InlineKeyboardButton(f'😇 Info', 'tips'),
-                InlineKeyboardButton(f'📝 𝖳𝗂𝗉𝗌', 'info')
-            ]
-            )
+        [
+                InlineKeyboardButton(f'sᴇʀɪᴇs', 'ᴍᴏᴠɪᴇs'),
+                InlineKeyboardButton(f'ᴍᴏᴠɪᴇs', 'sᴇʀɪᴇs'),
+                InlineKeyboardButton(f'ɪɴꜰᴏ', 'ɪɴꜰᴏ')
+        ]
+    )
                 
     except KeyError:
         grpid = await active_connection(str(query.message.from_user.id))
@@ -131,19 +133,21 @@ async def next_page(bot, query):
         settings = await get_settings(query.message.chat.id)
         if settings['auto_delete']:
             btn.insert(0, 
-            [
-                InlineKeyboardButton(f'😇 Info', 'tips'),
-                InlineKeyboardButton(f'📝 𝖳𝗂𝗉𝗌', 'info')
-            ]
-            )
+        [
+                InlineKeyboardButton(f'sᴇʀɪᴇs', 'ᴍᴏᴠɪᴇs'),
+                InlineKeyboardButton(f'ᴍᴏᴠɪᴇs', 'sᴇʀɪᴇs'),
+                InlineKeyboardButton(f'ɪɴꜰᴏ', 'ɪɴꜰᴏ')
+        ]
+    )
 
         else:
             btn.insert(0, 
-            [
-                InlineKeyboardButton(f'😇 Info', 'tips'),
-                InlineKeyboardButton(f'📝 𝖳𝗂𝗉𝗌', 'info')
-            ]
-            )
+        [
+                InlineKeyboardButton(f'sᴇʀɪᴇs', 'ᴍᴏᴠɪᴇs'),
+                InlineKeyboardButton(f'ᴍᴏᴠɪᴇs', 'sᴇʀɪᴇs'),
+                InlineKeyboardButton(f'ɪɴꜰᴏ', 'ɪɴꜰᴏ')
+        ]
+    )
     try:
         settings = await get_settings(query.message.chat.id)
         if settings['max_btn']:
@@ -233,11 +237,8 @@ async def next_page(bot, query):
                         InlineKeyboardButton("𝖭𝖤𝖷𝖳 ▶️", callback_data=f"next_{req}_{key}_{n_offset}")
                     ],
                 )
-    btn.insert(0, [
-        InlineKeyboardButton(f'🎬 {search} 🎬', 'rkbtn')
-    ])
-    btn.insert(2, [
-        InlineKeyboardButton("📤 𝖲𝖾𝗇𝖽 𝖠𝗅𝗅 𝖥𝗂𝗅𝖾𝗌 📤", callback_data=f"send_all#{req}#{key}#{pre}")
+    btn.insert(1, [
+        InlineKeyboardButton("📤 𝐒𝐞𝐧𝐝 𝐀𝐥𝐥 𝐅𝐢𝐥𝐞𝐬 📤", callback_data=f"send_all#{req}#{key}#{pre}")
     ])
     try:
         await query.edit_message_reply_markup(
@@ -875,14 +876,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         else:
             await query.answer("𝖸𝗈𝗎 𝖽𝗈𝗇'𝗍 𝗁𝖺𝗏𝖾 𝗌𝗎𝖿𝖿𝗂𝖼𝗂𝖾𝗇𝗍 𝗋𝗂𝗀𝗁𝗍𝗌 𝗍𝗈 𝖽𝗈 𝗍𝗁𝗂𝗌 !", show_alert=True)
 
-    elif query.data == 'rkbtn':
-        await query.answer("𝖧𝖾𝗒 𝖡𝗋𝗈 😍\n\n🎯 𝖢𝗅𝗂𝖼𝗄 𝖮𝗇 𝖳𝗁𝖾 𝖡𝗎𝗍𝗍𝗈𝗇 𝖻𝖾𝗅𝗈𝗐 𝖳𝗁𝖾 𝖥𝗂𝗅𝖾𝗌 𝖸𝗈𝗎 𝖶𝖺𝗇𝗍 𝖠𝗇𝖽 𝖲𝗍𝖺𝗋𝗍 𝖳𝗁𝖾 𝖡𝗈𝗍 ⬇️", True)
+    elif query.data == 'sᴇʀɪᴇs':
+        await query.answer("⚠️ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ⚠️\nɪꜰ ʏᴏᴜ ᴅᴏ ɴᴏᴛ sᴇᴇ ᴛʜᴇ ʀᴇǫᴜᴇsᴛ sᴇʀɪᴇs ꜰɪʟᴇ,\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ sᴇʀɪᴇs ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀsᴛᴇ ʜᴇʀᴇ\nاذا لم تجد المسلسل\nاذهب الي جوجل ⇦ اكتب الاسم ⇦ انسخ الاسم الصحيح ⇦ الصقه هنا", True)
 
-    elif query.data == 'info':
+    elif query.data == 'movie':
         await query.answer("𝗥𝗲𝗾𝘂𝗲𝘀𝘁𝘀 𝗙𝗼𝗿𝗺𝗮𝘁𝘀\n\n• 𝖲𝗈𝗅𝗈 2017\n• 𝖣𝗁𝗈𝗈𝗆 3 𝖧𝗂𝗇𝖽𝗂\n• 𝖪𝗎𝗋𝗎𝗉 𝖪𝖺𝗇𝗇𝖺𝖽𝖺\n• 𝖣𝖺𝗋𝗄 𝗌01\n• 𝖲𝗁𝖾 𝖧𝗎𝗅𝗄 720𝗉\n• 𝖥𝗋𝗂𝖾𝗇𝖽𝗌 𝗌03 1080𝗉\n\n‼️𝗗𝗼𝗻𝘁 𝗮𝗱𝗱 𝘄𝗼𝗿𝗱𝘀 & 𝘀𝘆𝗺𝗯𝗼𝗹𝘀  , . - 𝗹𝗶𝗸𝗲 send link movie series 𝗲𝘁𝗰‼️", True)
     
-    elif query.data == 'tips':
-        await query.answer("𝖳𝗁𝗂𝗌 𝖬𝖾𝗌𝗌𝖺𝗀𝖾 𝖶𝗂𝗅𝗅 𝖡𝖾 𝖣𝖾𝗅𝖾𝗍𝖾𝖽 𝖠𝖿𝗍𝖾𝗋 5 𝖬𝗂𝗇𝗎𝗍𝖾𝗌 𝗍𝗈 𝖯𝗋𝖾𝗏𝖾𝗇𝗍 𝖢𝗈𝗉𝗒𝗋𝗂𝗀𝗁𝗍 !\n\n𝖳𝗁𝖺𝗇𝗄 𝖸𝗈𝗎 𝖥𝗈𝗋 𝖴𝗌𝗂𝗇𝗀 𝖬𝖾 😊\n\n\n𝖯𝗈𝗐𝖾𝗋𝖾𝖽 𝖡𝗒 𝖯𝖨𝖱𝖮", True)
+    elif query.data == 'ɪɴꜰᴏ':
+        await query.answer("sᴇʀɪᴇs ʀᴇǫᴜᴇsᴛ ꜰᴏʀᴍᴀᴛ\n              ▔▔▔▔▔▔▔▔▔\nɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴀ sᴇʀɪᴇs ꜰᴏʟʟᴏᴡ ᴛʜᴇ ꜰᴏʀᴍᴀᴛ\n(للبحث عن مـسلسل اِتبع التنسيق الآتي)\nGame of Thrones\nSupernatural S11\nWednesday S01 1080p\n\n🚫➠ ᴅᴏɴᴛ ᴜsᴇ ':_(,./)&-", True)
 
     elif query.data == "start":                        
         buttons = [[
@@ -1318,7 +1319,7 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"🔖{get_size(file.file_size)}🔮{file.file_name}", callback_data=f'{pre}#{file.file_id}'
+                    text=f"[{get_size(file.file_size)}]🍿{file.file_name}", callback_data=f'{pre}#{file.file_id}'
                 ),
             ]
             for file in files
@@ -1341,19 +1342,21 @@ async def auto_filter(client, msg, spoll=False):
     try:
         if settings['auto_delete']:
             btn.insert(0, 
-            [
-                InlineKeyboardButton(f'😇 Info', 'tips'),
-                InlineKeyboardButton(f'📝 𝖳𝗂𝗉𝗌', 'info')
-            ]
-            )
+        [
+                InlineKeyboardButton(f'sᴇʀɪᴇs', 'ᴍᴏᴠɪᴇs'),
+                InlineKeyboardButton(f'ᴍᴏᴠɪᴇs', 'sᴇʀɪᴇs'),
+                InlineKeyboardButton(f'ɪɴꜰᴏ', 'ɪɴꜰᴏ')
+        ]
+    )
 
         else:
             btn.insert(0, 
-            [
-                InlineKeyboardButton(f'😇 Info', 'tips'),
-                InlineKeyboardButton(f'📝 𝖳𝗂𝗉𝗌', 'info')
-            ]
-            )
+        [
+                InlineKeyboardButton(f'sᴇʀɪᴇs', 'ᴍᴏᴠɪᴇs'),
+                InlineKeyboardButton(f'ᴍᴏᴠɪᴇs', 'sᴇʀɪᴇs'),
+                InlineKeyboardButton(f'ɪɴꜰᴏ', 'ɪɴꜰᴏ')
+        ]
+    )
                 
     except KeyError:
         grpid = await active_connection(str(message.from_user.id))
@@ -1361,25 +1364,24 @@ async def auto_filter(client, msg, spoll=False):
         settings = await get_settings(message.chat.id)
         if settings['auto_delete']:
             btn.insert(0, 
-            [
-                InlineKeyboardButton(f'😇 Info', 'tips'),
-                InlineKeyboardButton(f'📝 𝖳𝗂𝗉𝗌', 'info')
-            ]
-            )
-
+        [
+                InlineKeyboardButton(f'sᴇʀɪᴇs', 'ᴍᴏᴠɪᴇs'),
+                InlineKeyboardButton(f'ᴍᴏᴠɪᴇs', 'sᴇʀɪᴇs'),
+                InlineKeyboardButton(f'ɪɴꜰᴏ', 'ɪɴꜰᴏ')
+        ]
+    )
         else:
             btn.insert(0, 
-            [
-                InlineKeyboardButton(f'😇 Info', 'tips'),
-                InlineKeyboardButton(f'📝 𝖳𝗂𝗉𝗌', 'info')
-            ])
+        [
+                InlineKeyboardButton(f'sᴇʀɪᴇs', 'ᴍᴏᴠɪᴇs'),
+                InlineKeyboardButton(f'ᴍᴏᴠɪᴇs', 'sᴇʀɪᴇs'),
+                InlineKeyboardButton(f'ɪɴꜰᴏ', 'ɪɴꜰᴏ')
+        ]
+    )
             
                       
-    btn.insert(0, [
-        InlineKeyboardButton(f'🎬 {search} 🎬', 'rkbtn')
-    ])
-    btn.insert(2, [
-        InlineKeyboardButton("📤 𝖲𝖾𝗇𝖽 𝖠𝗅𝗅 𝖥𝗂𝗅𝖾𝗌 📤", callback_data=f"send_all#{req}#{key}#{pre}")
+    btn.insert(1, [
+        InlineKeyboardButton("📤 𝐒𝐞𝐧𝐝 𝐀𝐥𝐥 𝐅𝐢𝐥𝐞𝐬 📤", callback_data=f"send_all#{req}#{key}#{pre}")
     ])
     
     if offset != "":
