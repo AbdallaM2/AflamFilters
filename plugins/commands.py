@@ -169,7 +169,8 @@ async def start(client, message):
                     file_id=msg.get("file_id"),
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
-                    reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('⚔️ ArrowFlix ⚔️', url="https://t.me/ArrowFlix") ] ] ),
+                    reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton(bot.send_message(chat_id=update.message.-1005392905816,
+                     text='reply this message') ) ] ] ),
                     
                 )
             except FloodWait as e:
