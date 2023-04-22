@@ -168,10 +168,7 @@ async def start(client, message):
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
-                    protect_content=msg.get('protect', False),
-                    reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton(bot.send_message(chat_id=update.message.-1005392905816,
-                     text='reply this message') ) ] ] ),
-                    
+                    protect_content=msg.get('protect', False)       
                 )
             except FloodWait as e:
                 await asyncio.sleep(e.x)
