@@ -533,6 +533,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         file_id=file_id,
                         caption=f_caption,
                         protect_content=True if ident == "filep" else False,
+                        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('⚔️ ArrowFlix ⚔️', url="https://t.me/ArrowFlix") ] ] ))
                 else:
                     await query.answer(f"𝖧𝖾𝗒 {query.from_user.first_name}, 𝖳𝗁𝗂𝗌 𝗂𝗌 𝗇𝗈𝗍 𝗒𝗈𝗎𝗋 𝗋𝖾𝗊𝗎𝖾𝗌𝗍 !", show_alert=True)
                 await query.answer('𝖢𝗁𝖾𝖼𝗄 𝖯𝖬, 𝖨 𝗁𝖺𝗏𝖾 𝗌𝖾𝗇𝗍 𝖿𝗂𝗅𝖾𝗌 𝗂𝗇 𝖯𝖬', show_alert=True)
@@ -570,6 +571,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             file_id=file_id,
             caption=f_caption,
             protect_content=True if ident == 'checksubp' else False,
+                        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('⚔️ ArrowFlix ⚔️', url="https://t.me/ArrowFlix") ] ] ))
     elif query.data == "pages":
         await query.answer()
 
