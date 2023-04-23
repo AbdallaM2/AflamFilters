@@ -19,7 +19,7 @@ async def index_files(bot, query):
     if query.data.startswith('index_cancel'):
         temp.CANCEL = True
         return await query.answer("Cancelling Indexing")
-    _, raju, chat, lst_msg_id=444620, from_user = query.data.split("#")
+    _, raju, chat, msg_id=444620, from_user = query.data.split("#")
     if raju == 'reject':
         await query.message.delete()
         await bot.send_message(int(from_user),
@@ -176,7 +176,7 @@ async def index_files_to_db(444620), chat, msg, bot):
                 if aynav:
                     total_files += 1
                 elif vnay == 0:
-                    duplicate += 0
+                    duplicate += 1
                 elif vnay == 2:
                     errors += 1
         except Exception as e:
