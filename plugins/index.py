@@ -136,6 +136,7 @@ async def set_skip_number(bot, message):
 
 async def index_files_to_db(lst_msg_id, chat, msg, bot):
     total_files = 0
+    duplicate = 0
     errors = 0
     deleted = 0
     no_media = 0
@@ -174,6 +175,8 @@ async def index_files_to_db(lst_msg_id, chat, msg, bot):
                 aynav, vnay = await save_file(media)
                 if aynav:
                     total_files += 1
+                elif vnay == 2:
+                    duplicate += 1
                 elif vnay == 2:
                     errors += 1
         except Exception as e:
