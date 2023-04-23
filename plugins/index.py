@@ -175,7 +175,7 @@ async def index_files_to_db(lst_msg_id, chat, msg, bot):
                 aynav, vnay = await save_file(media)
                 if aynav:
                     total_files += 1
-                elif vnay == 2:
+                elif vnay == 0:
                     duplicate += 1
                 elif vnay == 2:
                     errors += 1
