@@ -972,10 +972,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "how":
         buttons = [[
-            InlineKeyboardButton('🪄 لماذا المشاهدة بترجمة خارجية افضل !', callback_data='nhow')
+            InlineKeyboardButton('🔍𝚂𝙴𝙰𝚁𝙲𝙷 𝙵𝙾𝚁𝙼𝙰𝚃 & طريقة البحث🔎', callback_data='ezay')
         ], [
-            InlineKeyboardButton('👩‍🦯 𝗕𝗔𝗖𝗞', callback_data='start'),
-            InlineKeyboardButton('🔰 اضـافـة التـرجـمة', callback_data='howadd')
+            InlineKeyboardButton('🔰 اضـافـة التـرجـمة', callback_data='howadd'),
+            InlineKeyboardButton('🪄 لماذا التورنت افضل !', callback_data='nhow')
+        ], [
+            InlineKeyboardButton('🔑 مصطلحات تورنت مهمة', callback_data='imp'),
+            InlineKeyboardButton('👩‍🦯 𝗕𝗔𝗖𝗞', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
@@ -1003,6 +1006,21 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.ABOUT_TXT.format(temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "ezay":
+        buttons = [[
+            InlineKeyboardButton('👩‍🦯 𝗕𝗔𝗖𝗞', callback_data='how')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.EZAY_TXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -1037,6 +1055,21 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
         await query.message.edit_text(
             text=script.HOWADD_TXT,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "imp":
+        buttons = [[
+            InlineKeyboardButton('👩‍🦯 𝗕𝗔𝗖𝗞', callback_data='how')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.IMP_TXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -1104,7 +1137,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "extra":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 𝖡𝖺𝖼𝗄', callback_data='help'),
-            InlineKeyboardButton('⚠ 𝖠𝖽𝗆𝗂𝗇', callback_data='admin')
+            InlineKeyboardButton('👮 𝖠𝖽𝗆𝗂𝗇', callback_data='admin')
         ]]
         await client.edit_message_media(
             query.message.chat.id, 
