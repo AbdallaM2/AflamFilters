@@ -1023,6 +1023,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "howadd":
         buttons = [[
+            InlineKeyboardButton('🕸️ موقع الترجمة', url='https://Subscene.com'),
+            InlineKeyboardButton('📺 برامج المشاهدة', url='https://telegra.ph/برامج-عرض-الترجمة-04-24'),
+            InlineKeyboardButton('➕ اضافة الترجمة', url='https://telegra.ph/تحميل-المسلسل-و-اضافة-الترجمة-03-19')
+        ], [
             InlineKeyboardButton('👩‍🦯 𝗕𝗔𝗖𝗞', callback_data='how')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
