@@ -977,8 +977,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔰 اضـافـة التـرجـمة', callback_data='howadd'),
             InlineKeyboardButton('🪄 لماذا التورنت افضل !', callback_data='nhow')
         ], [
-            InlineKeyboardButton('🔑 مصطلحات تورنت مهمة', callback_data='imp'),
-            InlineKeyboardButton('👩‍🦯 𝗕𝗔𝗖𝗞', callback_data='start')
+            InlineKeyboardButton('👩‍🦯 𝙱𝙰𝙲𝙺', callback_data='start'),
+            InlineKeyboardButton('🔑 مصطلحات تورنت مهمة', callback_data='imp')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
@@ -1061,6 +1061,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "imp":
         buttons = [[
             InlineKeyboardButton(📺 الفيديو', callback_data='vid')
+        ], [
             InlineKeyboardButton('👩‍🦯 𝙱𝙰𝙲𝙺', callback_data='how')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
