@@ -1060,7 +1060,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "imp":
         buttons = [[
-            InlineKeyboardButton('📺 الفيديو', callback_data='vidu')
+            InlineKeyboardButton('اختيار الصوت', url='https://telegra.ph/اختيار-الصوت-04-25'),
+            InlineKeyboardButton('الفرق بين x264 x265', url'https://telegra.ph/معدل-الترميز-04-23')
         ], [
             InlineKeyboardButton('👩‍🦯 𝙱𝙰𝙲𝙺', callback_data='how')
         ]]
@@ -1072,21 +1073,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
         await query.message.edit_text(
             text=script.IMP_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "vidu":
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 𝙱𝙰𝙲𝙺', callback_data='how')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
-        )
-        await query.message.edit_text(
-            text=script.VIDU_TXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
