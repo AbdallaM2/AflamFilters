@@ -1061,7 +1061,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "imp":
         buttons = [[
             InlineKeyboardButton('اختيار الصوت', url='https://telegra.ph/اختيار-الصوت-04-25'),
-            InlineKeyboardButton('الفرق بين x264 x265', url'https://telegra.ph/معدل-الترميز-04-23')
+            InlineKeyboardButton('الفرق بين x265 x264', url='https://telegra.ph/معدل-الترميز-04-23')
         ], [
             InlineKeyboardButton('👩‍🦯 𝙱𝙰𝙲𝙺', callback_data='how')
         ]]
