@@ -1075,21 +1075,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-    elif query.data == "vid":
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 𝙱𝙰𝙲𝙺', callback_data='how')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
-        )
-        await query.message.edit_text(
-            text=script.VID_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
     elif query.data == "manuelfilter":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 𝙱𝙰𝙲𝙺', callback_data='filters'),
