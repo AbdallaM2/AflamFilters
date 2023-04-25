@@ -1060,7 +1060,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "imp":
         buttons = [[
-            InlineKeyboardButton('📺 الفيديو', callback_data='vid')
+            InlineKeyboardButton('📺 الفيديو', callback_data='vidu')
         ], [
             InlineKeyboardButton('👩‍🦯 𝙱𝙰𝙲𝙺', callback_data='how')
         ]]
@@ -1075,7 +1075,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-    elif query.data == "vid":
+    elif query.data == "vidu":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 𝙱𝙰𝙲𝙺', callback_data='how')
         ]]
@@ -1086,9 +1086,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InputMediaPhoto(random.choice(PICS))
         )
         await query.message.edit_text(
-            text=script.VID_TXT,
+            text=script.VIDU_TXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
+        )
     elif query.data == "manuelfilter":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 𝙱𝙰𝙲𝙺', callback_data='filters'),
