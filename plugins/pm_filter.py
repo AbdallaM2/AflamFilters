@@ -1060,7 +1060,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "imp":
         buttons = [[
-            InlineKeyboardButton(📺 الفيديو', callback_data='vid')
+            InlineKeyboardButton('📺 الفيديو', callback_data='vid')
         ], [
             InlineKeyboardButton('👩‍🦯 𝙱𝙰𝙲𝙺', callback_data='how')
         ]]
