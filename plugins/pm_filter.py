@@ -1060,8 +1060,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "imp":
         buttons = [[
-            InlineKeyboardButton('📺 الفيديو', callback_data='vid')
-        ], [
             InlineKeyboardButton('👩‍🦯 𝙱𝙰𝙲𝙺', callback_data='how')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1234,7 +1232,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "owner_info":
             btn = [[
                     InlineKeyboardButton("👩‍🦯 𝙱𝙰𝙲𝙺", callback_data="start"),
-                    InlineKeyboardButton("📞 𝖢𝗈𝗇𝗍𝖺𝖼𝗍", url="t.me/a_magdy7")
+                    InlineKeyboardButton("📞 𝖢𝗈𝗇𝗍𝖺𝖼𝗍", url="t.me/rithesh_rkrm_17")
                   ]]
             await client.edit_message_media(
                 query.message.chat.id, 
