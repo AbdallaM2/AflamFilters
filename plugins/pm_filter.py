@@ -561,7 +561,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             file_id=file_id,
             caption=f_caption,
             protect_content=True if ident == 'checksubp' else False,
-                        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('⚔️ ArrowFlix ⚔️', url="https://t.me/ArrowFlix") ] ] ))
+                        )
     elif query.data == "pages":
         await query.answer()
 
@@ -877,10 +877,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "start":                        
         buttons = [[
-            InlineKeyboardButton('💯 𝙷𝙾𝚆 𝚃𝙾 𝚄𝚂𝙴 & كيفية الاستخدام 💯', callback_data='how')
+            InlineKeyboardButton('‼️ 𝙷𝙾𝚆 𝚃𝙾 𝚄𝚂𝙴 & كيفية الاستخدام ‼️', callback_data='how')
         ], [
             InlineKeyboardButton('🔍 𝚂𝙴𝙰𝚁𝙲𝙷', url='https://t.me/ArrowFlix'),
-            InlineKeyboardButton('📢 𝚄𝙿𝙳𝙰𝚃𝙴𝚂', url='https://t.me/TorrentSeriess')
+            InlineKeyboardButton('🔊 𝚄𝙿𝙳𝙰𝚃𝙴𝚂', url='https://t.me/TorrentSeriess')
         ], [
             InlineKeyboardButton('💠 𝙷𝙴𝙻𝙿', callback_data='help'),
             InlineKeyboardButton('🌐 𝙰𝙱𝙾𝚄𝚃', callback_data='about')
@@ -938,14 +938,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('💼 𝖥𝗂𝗅𝗍𝖾𝗋𝗌 𝖬𝗈𝖽𝖾', callback_data='filters'),
-            InlineKeyboardButton('🗂 𝖥𝗂𝗅𝖾 𝖲𝗍𝗈𝗋𝖾', callback_data='store_file')
+            InlineKeyboardButton('💼 𝙵𝙸𝙻𝚃𝙴𝚁𝚂 𝙼𝙾𝙳𝙴', callback_data='filters'),
+            InlineKeyboardButton('🗂 𝙵𝙸𝙻𝙴 𝚂𝚃𝙾𝚁𝙴', callback_data='store_file')
         ], [
-            InlineKeyboardButton('📟 𝖢𝗈𝗇𝗇𝖾𝖼𝗍𝗂𝗈𝗇𝗌', callback_data='coct'),
-            InlineKeyboardButton('⚙ 𝖤𝗑𝗍𝗋𝖺 𝖬𝗈𝖽𝖾𝗌', callback_data='extra')
+            InlineKeyboardButton('📟 𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽𝚂', callback_data='coct'),
+            InlineKeyboardButton('⚙ 𝙴𝚇𝚃𝚁𝙰 𝙼𝙾𝙳𝙴𝚂', callback_data='extra')
         ], [
-            InlineKeyboardButton('🏘 𝖧𝗈𝗆𝖾', callback_data='start'),
-            InlineKeyboardButton('♻️ Status', callback_data='stats')
+            InlineKeyboardButton('🏘 𝙷𝙾𝙼𝙴', callback_data='start'),
+            InlineKeyboardButton('🔮 𝚂𝚃𝙰𝚃𝚄𝚂', callback_data='stats')
         ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -983,7 +983,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('⭐ 𝙾𝚆𝙽𝙴𝚁', url='https://t.me/a_magdy7')
+            InlineKeyboardButton(' 𝙾𝚆𝙽𝙴𝚁', url='https://t.me/a_magdy7')
         ], [
             InlineKeyboardButton('🏠 𝙷𝙾𝙼𝙴', callback_data='start'),
             InlineKeyboardButton('𝙲𝙻𝙾𝚂𝙴 🚫', callback_data='close_data')
