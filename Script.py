@@ -104,21 +104,14 @@ Cᴏᴍᴍᴀɴᴅs Aɴᴅ Usᴀɢᴇ:
 <b>᚛› 𝚄𝚂𝙴𝙳 𝚂𝚃𝙾𝚁𝙰𝙶𝙴: <code>{}</code></b>
 <b>᚛› 𝙵𝚁𝙴𝙴 𝚂𝚃𝙾𝚁𝙰𝙶𝙴: <code>{}</code></b>"""
 
-    LOG_TEXT_G = """
-    𝐍𝐞𝐰𝐆𝐫𝐨𝐮𝐩
+    LOG_TEXT_G = """#NewGroup
+𝖦𝗋𝗈𝗎𝗉 = {}(<code>{}</code>)
+𝖳𝗈𝗍𝖺𝗅 𝖬𝖾𝗆𝖻𝖾𝗋𝗌 = <code>{}</code>
+𝖠𝖽𝖽𝖾𝖽 𝖡𝗒 - {}"""
 
-<b>᚛› 𝐆𝐫𝐨𝐮𝐩 ⪼ {}(<code>{}</code>)</b>
-<b>᚛› 𝐆 𝐈𝐃 ⪼ @{}
-<b>᚛› 𝐓𝐨𝐭𝐚𝐥 𝐌𝐞𝐦𝐛𝐞𝐫𝐬 ⪼ {}</b>
-<b>᚛› 𝐀𝐝𝐝𝐞𝐝 𝐁𝐲 ⪼ {}</b>
-"""
-
-    LOG_TEXT_P = """
-    𝐍𝐞𝐰𝐔𝐬𝐞𝐫
-
-<b>᚛› 𝐈𝐃 - <code>{}</code></b>
-<b>᚛› 𝐍𝐚𝐦𝐞 - {}</b>
-<b>᚛› 𝐔𝐍 - @{}</b>"""
+    LOG_TEXT_P = """#NewUser
+𝖨𝖽 - <code>{}</code>
+𝖭𝖺𝗆𝖾 - {}"""
 
     ALRT_TXT = """Hello {},
 This is Not your Request
